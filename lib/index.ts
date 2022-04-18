@@ -26,7 +26,7 @@ export class Paginator<T> {
         this.objects = objects;
 		this.pagSize = max;
 		this.amountOfPages = Math.ceil(objects.length / this.pagSize);
-        this.currentPage = 0;
+        this.currentPage = -1;
     }
 
     /**
@@ -34,7 +34,7 @@ export class Paginator<T> {
      * @returns True if a next page exists
      */
     hasNext(): boolean {
-        return this.currentPage < this.amountOfPages;
+        return this.currentPage < this.amountOfPages - 1;
     }
 
     /**
@@ -52,8 +52,9 @@ export class Paginator<T> {
     next(): boolean {
         if (this.hasNext()) {
             this.currentPage++;
+            return true;
         }
-        return this.hasNext();
+        return false;
     }
 
     /**
@@ -84,3 +85,5 @@ export class Paginator<T> {
         return this.currentPage;
     }
 }
+
+export default Paginator;
