@@ -1,6 +1,6 @@
 {
   "name": "simple-paginate",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple paginator built in TypeScript",
   "main": "lib/index.js",
   "repository": "https://github.com/ZachyFoxx/simple-paginate",

@@ -81,6 +81,16 @@ export class Paginator<T> {
         return this.objects.slice(this.currentPage * this.pagSize, (this.currentPage + 1) * this.pagSize);
     }
 
+    /**
+     * 
+     * Get a page by index
+     * @param index The index of the page
+     * @returns The page
+     */
+    getPageByIndex(index: number): T[] {
+        return this.objects.slice(index * this.pagSize, (index + 1) * this.pagSize);
+    }
+
     getPageNumber() {
         return this.currentPage;
     }
